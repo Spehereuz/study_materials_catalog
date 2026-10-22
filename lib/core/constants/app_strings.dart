@@ -1,3 +1,5 @@
+import '../utils/uk_grammar.dart';
+
 /// Текстові рядки інтерфейсу. Зібрані в одному місці, щоб надалі
 /// перенести їх у файли локалізації (NFR-10).
 abstract final class AppStrings {
@@ -8,6 +10,24 @@ abstract final class AppStrings {
       'Конспекти, посилання та файли за дисциплінами й темами';
   static const cancel = 'Скасувати';
   static const or = 'або';
+  static const showPassword = 'Показати пароль';
+  static const hidePassword = 'Приховати пароль';
+
+  // Матеріали та дисципліни
+  static const materialTypeNote = 'конспект';
+  static const materialTypeLink = 'посилання';
+  static const materialTypeFile = 'файл';
+  static const addToFavorites = 'Додати до обраного';
+  static const removeFromFavorites = 'Прибрати з обраного';
+
+  static String topicsCount(int count) =>
+      UkGrammar.count(count, 'тема', 'теми', 'тем');
+
+  static String materialsCount(int count) =>
+      UkGrammar.count(count, 'матеріал', 'матеріали', 'матеріалів');
+
+  static String disciplinesCount(int count) =>
+      UkGrammar.count(count, 'дисципліна', 'дисципліни', 'дисциплін');
 
   // Валідація
   static const emailRequired = 'Введіть електронну пошту';
