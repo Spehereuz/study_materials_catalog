@@ -29,6 +29,36 @@ abstract final class AppStrings {
   static String disciplinesCount(int count) =>
       UkGrammar.count(count, 'дисципліна', 'дисципліни', 'дисциплін');
 
+  // Вхід, реєстрація, відновлення пароля
+  static const emailLabel = 'Електронна пошта';
+  static const emailHint = 'name@example.com';
+  static const passwordLabel = 'Пароль';
+  static const forgotPassword = 'Забули пароль?';
+  static const signIn = 'Увійти';
+  static const signInWithApple = 'Увійти через Apple';
+  static const noAccount = 'Немає облікового запису?';
+  static const createAccount = 'Створити обліковий запис';
+  static const invalidCredentials = 'Неправильна електронна пошта або пароль';
+  static const backToSignIn = 'Назад до входу';
+  static const registerTitle = 'Створення облікового запису';
+  static const registerSubtitle =
+      'Заповніть форму, щоб зберігати свої матеріали';
+  static const nameLabel = "Ім'я";
+  static const confirmPasswordLabel = 'Підтвердження пароля';
+  static const register = 'Зареєструватися';
+  static const haveAccount = 'Вже маєте обліковий запис?';
+  static const emailAlreadyInUse = 'Цю електронну пошту вже зареєстровано';
+  static const resetTitle = 'Відновлення пароля';
+  static const resetSubtitle =
+      'Введіть електронну пошту, вказану під час реєстрації. '
+      'Ми надішлемо посилання для скидання пароля.';
+  static const sendResetLink = 'Надіслати посилання';
+  static const resendResetLink = 'Надіслати ще раз';
+  static const returnToSignIn = 'Повернутися до входу';
+
+  static String resetEmailSent(String email) =>
+      'Лист надіслано на $email. Перевірте пошту.';
+
   // Навігація
   static const navHome = 'Головна';
   static const navDisciplines = 'Дисципліни';

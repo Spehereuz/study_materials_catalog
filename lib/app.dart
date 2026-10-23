@@ -6,9 +6,11 @@ import 'core/theme/app_theme.dart';
 import 'data/services/auth_service.dart';
 import 'data/services/catalog_repository.dart';
 import 'data/services/photo_picker.dart';
+import 'features/auth/login_screen.dart';
 import 'features/shell/app_shell.dart';
 
-/// Кореневий віджет: сервіси, тема і перший екран.
+/// Кореневий віджет: сервіси, тема і перший екран. Якщо сесія вже
+/// активна, одразу відкривається головне вікно, інакше — екран входу (FR-02).
 class StudyMaterialsApp extends StatelessWidget {
   const StudyMaterialsApp({
     super.key,
@@ -32,7 +34,7 @@ class StudyMaterialsApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
-        home: const AppShell(),
+        home: auth.currentUser == null ? const LoginScreen() : const AppShell(),
       ),
     );
   }
