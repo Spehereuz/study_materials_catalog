@@ -29,6 +29,31 @@ abstract final class AppStrings {
   static String disciplinesCount(int count) =>
       UkGrammar.count(count, 'дисципліна', 'дисципліни', 'дисциплін');
 
+  // Навігація
+  static const navHome = 'Головна';
+  static const navDisciplines = 'Дисципліни';
+  static const navSearch = 'Пошук';
+  static const navProfile = 'Профіль';
+  static const navSettings = 'Налаштування';
+  static const myDisciplines = 'Мої дисципліни';
+  static const synced = 'Синхронізовано';
+  static const searchShortcut = '⌘F';
+
+  // Розділи в розробці
+  static const comingSoonTitle = 'Розділ у розробці';
+  static const comingSoonDisciplines =
+      'Тут буде список дисциплін із сортуванням, створенням, '
+      'редагуванням і видаленням.';
+  static const comingSoonSearch =
+      'Тут буде пошук матеріалів за назвою, тегами й текстом конспектів '
+      'з фільтрами за типом і дисципліною.';
+  static const comingSoonSettings =
+      'Тут можна буде обрати тему оформлення та мову інтерфейсу.';
+  static const comingSoonHome =
+      'Тут буде головний екран зі швидким доступом до матеріалів.';
+  static const comingSoonProfile =
+      'Тут можна буде змінити дані профілю, фото та пароль.';
+
   // Валідація
   static const emailRequired = 'Введіть електронну пошту';
   static const emailInvalid = 'Некоректний формат електронної пошти';

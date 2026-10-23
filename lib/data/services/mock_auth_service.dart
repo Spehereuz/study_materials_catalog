@@ -5,10 +5,14 @@ import 'auth_service.dart';
 /// Заглушка автентифікації: облікові записи зберігаються в пам'яті,
 /// мережеві запити імітуються затримкою [latency].
 class MockAuthService extends AuthService {
+  /// [initialUser] — користувач уже активної сесії (FR-02), наприклад
+  /// для тестів головного екрана без проходження входу.
   MockAuthService({
     this.latency = const Duration(milliseconds: 600),
+    UserProfile? initialUser,
     DateTime Function()? clock,
-  }) : _clock = clock ?? DateTime.now {
+  }) : _currentUser = initialUser,
+       _clock = clock ?? DateTime.now {
     _accounts[MockData.demoEmail] = _Account(
       MockData.demoUser,
       MockData.demoPassword,
