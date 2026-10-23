@@ -7,6 +7,7 @@ import '../../core/constants/app_strings.dart';
 import '../../data/models/user_profile.dart';
 import '../home/home_screen.dart';
 import '../placeholder/coming_soon_screen.dart';
+import '../profile/profile_screen.dart';
 import 'app_section.dart';
 import 'catalog_controller.dart';
 import 'widgets/app_rail.dart';
@@ -127,10 +128,9 @@ class _AppShellState extends State<AppShell> {
         icon: Icons.search,
         message: AppStrings.comingSoonSearch,
       ),
-      AppSection.profile => const ComingSoonScreen(
-        title: AppStrings.navProfile,
-        icon: Icons.person_outline,
-        message: AppStrings.comingSoonProfile,
+      AppSection.profile => ProfileScreen(
+        user: user,
+        snapshot: catalog.snapshot,
       ),
       AppSection.settings => const ComingSoonScreen(
         title: AppStrings.navSettings,

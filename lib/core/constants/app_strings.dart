@@ -99,6 +99,42 @@ abstract final class AppStrings {
   static String materialPath(String discipline, String topic) =>
       '$discipline › $topic';
 
+  // Профіль
+  static const profileData = 'Дані профілю';
+  static const groupLabel = 'Група';
+  static const institutionLabel = 'Навчальний заклад';
+  static const emailReadOnlyHint =
+      'Електронна пошта використовується для входу, тому її не можна змінити';
+  static const saveChanges = 'Зберегти зміни';
+  static const changesSaved = 'Зміни збережено';
+  static const security = 'Безпека';
+  static const change = 'Змінити';
+  static const signOut = 'Вийти з облікового запису';
+  static const signOutTitle = 'Вийти з облікового запису?';
+  static const signOutMessage =
+      'Локальну копію даних на цьому комп’ютері буде очищено. '
+      'Ваші матеріали залишаться в хмарі й будуть доступні після '
+      'наступного входу.';
+  static const signOutConfirm = 'Вийти';
+  static const changePhoto = 'Змінити фото профілю';
+  static const chooseImage = 'Вибрати зображення…';
+  static const removePhoto = 'Видалити фото';
+  static const photoHint =
+      'Натисніть на фото, щоб змінити його. JPG або PNG, до 5 МБ.';
+  static const changePasswordTitle = 'Зміна пароля';
+  static const changePasswordSubtitle =
+      'Для підтвердження введіть поточний пароль.';
+  static const currentPasswordLabel = 'Поточний пароль';
+  static const newPasswordLabel = 'Новий пароль';
+  static const confirmNewPasswordLabel = 'Підтвердження нового пароля';
+  static const changePasswordAction = 'Змінити пароль';
+  static const currentPasswordRequired = 'Введіть поточний пароль';
+  static const wrongCurrentPassword = 'Неправильний поточний пароль';
+  static const samePassword = 'Новий пароль має відрізнятися від поточного';
+  static const passwordChanged = 'Пароль змінено';
+
+  static String passwordChangedOn(String date) => 'Змінено $date';
+
   // Розділи в розробці
   static const comingSoonTitle = 'Розділ у розробці';
   static const comingSoonDisciplines =
@@ -109,8 +145,6 @@ abstract final class AppStrings {
       'з фільтрами за типом і дисципліною.';
   static const comingSoonSettings =
       'Тут можна буде обрати тему оформлення та мову інтерфейсу.';
-  static const comingSoonProfile =
-      'Тут можна буде змінити дані профілю, фото та пароль.';
 
   // Валідація
   static const emailRequired = 'Введіть електронну пошту';
