@@ -1,17 +1,78 @@
-# study_materials_catalog
+# Каталог навчальних матеріалів
 
-A new Flutter project.
+Кросплатформний Flutter-застосунок для збереження конспектів, посилань і файлів
+за дисциплінами та темами. Лабораторні роботи з дисципліни «Кросплатформне
+програмування», Національний університет «Львівська політехніка».
 
-## Getting Started
+**Цільова платформа:** macOS (desktop). **Flutter:** 3.47.4 (stable), Dart 3.13.
 
-This project is a starting point for a Flutter application.
+## Стан роботи
 
-A few resources to get you started if this is your first Flutter project:
+| ЛР | Зміст | Стан |
+|----|-------|------|
+| 1 | Створення проєкту, тематичний головний екран | ✅ |
+| 2 | Специфікація вимог і дизайн GUI | ✅ (звіт) |
+| 3 | Базова структура застосунку та основні екрани без бізнес-логіки | ✅ |
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### ЛР3: реалізовані екрани
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Вхід** (S1, FR-02): валідація полів, індикатор завантаження, повідомлення
+  «Неправильна електронна пошта або пароль».
+- **Реєстрація** (S2, FR-01) і **відновлення пароля** (S3, FR-03).
+- **Головний екран** (S4, FR-08): привітання, пошук, швидкі дії, нещодавні
+  та обрані матеріали, картки дисциплін, порожній стан для нового користувача.
+- **Профіль** (S10, FR-04–FR-06): редагування даних, меню фото з перевіркою
+  формату, вихід з підтвердженням.
+- **Зміна пароля** (S11, FR-07).
+- Адаптивна оболонка: бічна панель від 840 pt, навігаційний рейл для вужчих
+  вікон (NFR-13); ⌘F — пошук, ⌘, — налаштування.
+
+Розділи «Дисципліни», «Пошук» і «Налаштування» поки що є заглушками.
+Інтеграцію з Firebase замінюють заглушки `MockAuthService`,
+`MockCatalogRepository` і `MockPhotoPicker` з hardcoded-даними.
+
+## Демо-обліковий запис
+
+| Електронна пошта | Пароль |
+|------------------|--------|
+| `vlad@example.com` | `student2026` |
+
+Новий обліковий запис, створений через реєстрацію, отримує порожній каталог.
+
+## Запуск
+
+```bash
+flutter pub get
+flutter run -d macos
+```
+
+Перевірка:
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Структура `lib/`
+
+```text
+lib/
+├── main.dart              точка входу, підстановка заглушок сервісів
+├── app.dart               MaterialApp, тема, вибір першого екрана
+├── app_scope.dart         InheritedWidget із сервісами
+├── core/
+│   ├── constants/         відступи, розміри, рядки інтерфейсу, ресурси
+│   ├── theme/             тема Material 3 та акцентні кольори
+│   ├── utils/             валідатори, форматування дат, відмінки й множина
+│   └── widgets/           перевикористовувані віджети
+├── data/
+│   ├── models/            профіль, дисципліна, тема, матеріал
+│   ├── mock/              hardcoded-дані з макетів ЛР2
+│   └── services/          контракти сервісів та їхні заглушки
+└── features/
+    ├── auth/              вхід, реєстрація, відновлення пароля
+    ├── shell/             оболонка з бічною панеллю та рейлом
+    ├── home/              головний екран
+    ├── profile/           профіль і зміна пароля
+    └── placeholder/       заглушка розділів у розробці
+```
