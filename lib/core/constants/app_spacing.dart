@@ -36,6 +36,6 @@ abstract final class AppBreakpoints {
   /// Від цієї ширини — постійна бічна панель з підписами.
   static const double expanded = 840;
 
-  /// Від цієї ширини — дві колонки вмісту на головному екрані.
-  static const double twoColumns = 1000;
+  /// Ширина вмісту, від якої блоки «Нещодавні» та «Обране» стоять поруч.
+  static const double twoColumnContent = 720;
 }

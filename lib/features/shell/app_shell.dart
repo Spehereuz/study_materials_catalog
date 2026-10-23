@@ -5,6 +5,7 @@ import '../../app_scope.dart';
 import '../../core/constants/app_spacing.dart';
 import '../../core/constants/app_strings.dart';
 import '../../data/models/user_profile.dart';
+import '../home/home_screen.dart';
 import '../placeholder/coming_soon_screen.dart';
 import 'app_section.dart';
 import 'catalog_controller.dart';
@@ -111,10 +112,10 @@ class _AppShellState extends State<AppShell> {
 
   Widget _buildSection(UserProfile user, CatalogController catalog) {
     return switch (_section) {
-      AppSection.home => const ComingSoonScreen(
-        title: AppStrings.navHome,
-        icon: Icons.home_outlined,
-        message: AppStrings.comingSoonHome,
+      AppSection.home => HomeScreen(
+        user: user,
+        catalog: catalog,
+        onOpenSection: _select,
       ),
       AppSection.disciplines => const ComingSoonScreen(
         title: AppStrings.navDisciplines,

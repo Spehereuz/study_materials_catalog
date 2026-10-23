@@ -9,7 +9,7 @@ import 'package:study_materials_catalog/data/services/mock_auth_service.dart';
 import 'package:study_materials_catalog/data/services/photo_picker.dart';
 
 void main() {
-  testWidgets('Shell shows sidebar with disciplines of the signed-in user', (
+  testWidgets('Shell shows home screen and sidebar of the signed-in user', (
     tester,
   ) async {
     tester.view.physicalSize = const Size(1280, 800);
@@ -29,8 +29,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.appShortTitle), findsOneWidget);
-    expect(find.text(AppStrings.myDisciplines), findsOneWidget);
-    expect(find.text('Бази даних'), findsOneWidget);
+    expect(find.text('Вітаємо, Владиславе!'), findsOneWidget);
+    expect(find.text('6 дисциплін, 24 теми, 83 матеріали'), findsOneWidget);
+    expect(find.text('Бази даних'), findsNWidgets(2));
     expect(find.text(MockData.demoUser.name), findsOneWidget);
 
     await tester.tap(find.text(AppStrings.navSearch));

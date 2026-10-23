@@ -39,6 +39,36 @@ abstract final class AppStrings {
   static const synced = 'Синхронізовано';
   static const searchShortcut = '⌘F';
 
+  // Головний екран
+  static const searchMaterialsHint = 'Пошук матеріалів';
+  static const newDiscipline = 'Нова дисципліна';
+  static const newMaterial = 'Новий матеріал';
+  static const recentMaterials = 'Нещодавні матеріали';
+  static const allMaterials = 'Усі матеріали';
+  static const favorites = 'Обране';
+  static const allDisciplines = 'Усі дисципліни';
+  static const noRecentMaterials =
+      "Тут з'являться матеріали, які ви нещодавно відкривали.";
+  static const noFavorites =
+      'Позначте матеріал зірочкою, щоб швидко повертатися до нього.';
+  static const emptyCatalogTitle = 'Поки що немає дисциплін';
+  static const emptyCatalogMessage =
+      'Створіть першу дисципліну, щоб додавати до неї конспекти, '
+      'посилання й файли.';
+  static const createFirstDiscipline = 'Створити дисципліну';
+  static const featureInProgress =
+      "Ця функція з'явиться в наступній версії застосунку";
+
+  static String greeting(String firstName) =>
+      'Вітаємо, ${UkGrammar.vocative(firstName)}!';
+
+  static String catalogSummary(int disciplines, int topics, int materials) =>
+      '${disciplinesCount(disciplines)}, ${topicsCount(topics)}, '
+      '${materialsCount(materials)}';
+
+  static String materialPath(String discipline, String topic) =>
+      '$discipline › $topic';
+
   // Розділи в розробці
   static const comingSoonTitle = 'Розділ у розробці';
   static const comingSoonDisciplines =
@@ -49,8 +79,6 @@ abstract final class AppStrings {
       'з фільтрами за типом і дисципліною.';
   static const comingSoonSettings =
       'Тут можна буде обрати тему оформлення та мову інтерфейсу.';
-  static const comingSoonHome =
-      'Тут буде головний екран зі швидким доступом до матеріалів.';
   static const comingSoonProfile =
       'Тут можна буде змінити дані профілю, фото та пароль.';
 
